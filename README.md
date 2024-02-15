@@ -4,7 +4,7 @@ class Mentor:
         self.surname = surname
         self.courses_attached = []
 
-    def __str__(self):
+   def __str__(self):
         pes = f'Имя: {self.name}\nФамилия: {self.surname}'
         return pes
 
@@ -16,22 +16,22 @@ class Lekturer (Mentor):
         self.lec = []
         self.grades = {}
 
-    def __str__(self):
+   def __str__(self):
         ses = f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self.grades}'
         return ses
 
-    def average_grades_lec(lektor_list, lec_list):
+   def average_grades_lec(lektor_list, lec_list):
         lektor_list = []
         lec_list = []
 
-    def aw_grades_LEC(self):
+   def aw_grades_LEC(self):
         '''
         Средняя оценка 1 лектора по курсу
         '''
         grades_list = sum(self.grades.values(), start = [])
         return round(sum(grades_list) / len(grades_list), 2)
 
-    def __lt__(self, other):
+   def __lt__(self, other):
         '''
         Сравнение Лекторов по оценкам
         '''
@@ -76,18 +76,18 @@ class Student:
         self.courses_in_progress = []
         self.grades = {}
 
-    def __str__ (self):
+   def __str__ (self):
         res = f'Имя: {self.name}\nФамилия: {self.surname}\nСредння оценка за домашнее задание: {self.grades}\nКурсы в процессе изучения: {self.courses_in_progress}\nЗавершенные курсы: {self.finished_courses}'
         return res
 
-    def aw_grades(self):
+   def aw_grades(self):
         '''
         Средняя оценка 1 студента по курсу
         '''
         grades_list = sum(self.grades.values(), start = [])
         return round(sum(grades_list) / len(grades_list), 2)
 
-    def __lt__(self, other):
+   def __lt__(self, other):
         '''
         Сравнение студентов по оценкам
         '''
@@ -97,7 +97,7 @@ class Student:
         return self.aw_grades() < other.aw_grades()
         
         
-    def rate_L_M(self, lektor, lec, grade):
+   def rate_L_M(self, lektor, lec, grade):
         '''
         Выставление оценок лекторам
         '''
